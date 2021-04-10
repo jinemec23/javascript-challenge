@@ -58,8 +58,8 @@ function runEnter() {
         //console.log(date);
         var row = tbody.append("tr");
         Object.entries(date).forEach(function([key, value]) {
-            console.log(key, value);
-            var cell = tbody.append("td");
+            //console.log(key, value);
+            var cell = row.append("td");
             cell.text(value);
         });
     });
