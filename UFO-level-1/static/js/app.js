@@ -36,11 +36,11 @@ data.forEach(function(ufoSightingReport) {
 //and search through the date / time column to find rows that match user input.
 
 var button = d3.select("#filter-btn");
-//var form = d3.select("form");
+var form = d3.select("#form");
 
 // // Create event handlers 
 button.on("click", runEnter);
-//form.on("submit", runEnter);
+form.on("submit", runEnter);
 
 function runEnter() {
     // Prevent the page from refreshing
