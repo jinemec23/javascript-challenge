@@ -44,19 +44,23 @@ var button = d3.select("#filter-btn");
 
 // // Create event handlers 
 button.on("click", runEnter);
-//form.on("submit", runEnter);
+form.on("submit", runEnter);
 
 function runEnter() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
     tbody.html("");
 
-    // Select the input element and get the raw HTML node
-    var inputElement = d3.select("#datetime");
+    var inputElement = d3.select("#input");
     var inputValue = inputElement.property("value");
     console.log(inputValue);
-    var filteredData = tableData.filter(date => date.datetime === inputValue);
+    var filteredData = tableData.filter(date => date.datetime === inputValue ||
+        date.city === inputValue ||
+        date.state === inputValue ||
+        date.country === inputValue ||
+        date.shape === inputValue);
     console.log(filteredData);
+
 
     filteredData.forEach(function(date) {
         //console.log(date);
